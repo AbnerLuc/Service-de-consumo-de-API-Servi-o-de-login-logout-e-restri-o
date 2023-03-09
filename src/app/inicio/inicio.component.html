@@ -28,65 +28,25 @@
 
 <h2>Jogos Em Destaque</h2>
     <mat-grid-list cols="3">
-        <mat-grid-tile>
+        <mat-grid-tile *ngFor="let produto of produtos">
             <mat-card class="example-card">
-                <img mat-card-image src="./assets/img/jogo03.jpg" alt="jogo de ação">
+                <img mat-card-image src="./assets/img/{{produto.foto}}" alt="jogo de ação">
                 <mat-card-header>
-                    <mat-card-title>Red Dead Redemption 2</mat-card-title>
+                    <mat-card-title>{{produto.produto}}</mat-card-title>
                 </mat-card-header>
         
                 <mat-card-content>
                     <p>
-                       Destaque em ação
+                        {{produto.descricao}}
                     </p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <P>R$ 150.00</P>
+                    <P>{{produto.preco | currency : 'BRL'}}</P>
                     <button mat-button>COMPRAR</button>
                 </mat-card-actions>
 
             </mat-card>
-        </mat-grid-tile>
-    
-            <mat-grid-tile>
-                <mat-card class="example-card">
-                    <img mat-card-image src="./assets/img/jogo02.jpg" alt="jogo popular">
-                    <mat-card-header>
-                        <mat-card-title>Skyrim</mat-card-title>
-                    </mat-card-header>
-            
-                    <mat-card-content>
-                        <p>
-                           Destaque em RPG
-                        </p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <P>R$ 150.00</P>
-                        <button mat-button>COMPRAR</button>
-                    </mat-card-actions>
-                </mat-card>
-            </mat-grid-tile>
-
-
-                <mat-grid-tile>
-                    <mat-card class="example-card">
-                        <img mat-card-image src="./assets/img/jogo01.png" alt="jogo recem lançado">
-                        <mat-card-header>
-                            <mat-card-title>The Witcher 3</mat-card-title>
-                        </mat-card-header>
-                
-                        <mat-card-content>
-                            <p>
-                                Destaque em aventura
-                            </p>
-                        </mat-card-content>
-                        <mat-card-actions>
-                            <P>R$ 150.00</P>
-                            <button mat-button>COMPRAR</button>
-                        </mat-card-actions>
-                    </mat-card>
-
-            </mat-grid-tile>
+        </mat-grid-tile>    
       </mat-grid-list>
 
 </main>
